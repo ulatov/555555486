@@ -7,7 +7,7 @@
     <title>+995 555 555 486 | index page</title>
     <style>
         /* A Modern CSS Reset. Thanks for https://piccalil.li/blog/a-modern-css-reset/ */
-        
+
         /* Box sizing rules */
         *,
         *::before,
@@ -83,17 +83,23 @@
         }
         }
         body {
-            min-height: 100vh;
             display: grid;
             grid-template-rows: auto 1fr auto;
             text-align: center;
+        }
+        .phonenumber {
+            position: relative;
+            top:50%;
+            transform: translateY(-50%);
         }
     </style>
 </head>
 <body>
     <header>the header</header>
     <main>
-        <h1>+995 555 555 486</h1>
+        <div class="phonenumber">
+            <h1><a href="tel:+995555555486">+995 555 555 486</a></h1>
+        </div>
     </main>
     <footer>the footer</footer>
 </body>
