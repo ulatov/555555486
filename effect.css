@@ -1,0 +1,32 @@
+@import url("moderncssreset.css");
+
+.interactelement {
+    height: 9vw;
+    width: 5vmin;
+    
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    transition: all .15s ease-in-out;
+    font-size: 10vmin;
+    
+    
+}
+
+.thebigone {
+    font-size: 20vmin;
+    text-shadow: 10px 10px 5px gray;
+}
+
+.numbers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    
+    transform: translate(-50%, -50%);
+    
+    top: 50vh;
+    left: 50vw;
+    
+}
