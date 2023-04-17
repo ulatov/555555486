@@ -1,3 +1,7 @@
+---
+// test
+import '../styles/reset.css'
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +16,18 @@
     <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
-    <slot />
+    <header>| heaader | index |</header>
+    <main>
+        <slot />
+    </main>
+    <footer>| footer | 2023 |</footer>
 </body>
 </html>
+
+<style>
+    body {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        min-height: 100vh;
+    }
+</style>
