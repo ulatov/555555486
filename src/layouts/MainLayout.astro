@@ -1,6 +1,7 @@
 ---
 // test
-import '../styles/reset.css'
+import '../styles/reset.css';
+import Header from '../components/Header.astro';
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +17,7 @@ import '../styles/reset.css'
     <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
-    <header>| heaader | index |</header>
+    <Header />
     <main>
         <slot />
     </main>
