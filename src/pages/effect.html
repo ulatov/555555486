@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+    <script crossorigin="anonymous" defer="defer" type="application/javascript" src="effect.js"></script>
+    <link crossorigin="anonymous" media="all" rel="stylesheet" href="effect.css" />
+    -->
+    <style>
+        @import url("moderncssreset.css");
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+        body {
+            overscroll-behavior: none;
+            overflow: hidden;
+            -webkit-user-select: none;  
+            -moz-user-select: none;    
+            -ms-user-select: none;      
+            user-select: none;
+        }
+
+        .interactelement {
+            height: 50vh;
+            width: 7vmin;
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            transition: all .2s ease-in-out;
+            font-size: 10vmin;
+            font-family: 'Fredoka One', cursive;
+        }
+
+        .thebigone {
+            font-size: 30vmin;
+            padding-bottom: 100px;
+            z-index: 1;
+            color: brown;
+        }
+
+        .thebigone + div {
+            font-size: 15vmin;
+            padding-bottom: 50px;
+            color: rgb(88, 22, 22);
+        }
+
+        .interactelement:has(+ .thebigone){
+            font-size: 15vmin;
+            padding-bottom: 50px;
+            color: rgb(88, 22, 22);
+        }
+
+        .numbers {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position:relative;
+            transform: translate(-50%, -50%);
+            top: 50vh;
+            left: 50vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="numbers">
+
+        <div class="interactelement">+</div>
+        <div class="interactelement">9</div>
+        <div class="interactelement">9</div>
+        <div class="interactelement">5</div>
+        <div class="interactelement">5</div>
+        <div class="interactelement">5</div>
+        <div class="interactelement">5</div>
+        <div class="interactelement">5</div>
+        <div class="interactelement">5</div>
+        <div class="interactelement">5</div>
+        <div class="interactelement">4</div>
+        <div class="interactelement">8</div>
+        <div class="interactelement">6</div>
+        
+    </div>
+    <script>
+        "use strict";
+
+        (()=>{
+            
+            let currentElement = undefined
+
+            document.body.addEventListener('touchmove',function(e){
+                var myLocation = e.changedTouches[0]
+                var realTarget = document.elementFromPoint(myLocation.clientX, myLocation.clientY)
+
+                if (realTarget == undefined || !realTarget.classList.contains("interactelement")) {
+                    if (currentElement !== undefined) {
+                        currentElement.classList.remove('thebigone')
+                    }
+                    currentElement = undefined
+                    return
+                }
+                
+                if (currentElement == realTarget) {
+                } else {
+                    if (currentElement !== undefined) {
+                        currentElement.classList.remove('thebigone')
+                    }
+                    currentElement = realTarget
+                    currentElement.classList.add('thebigone')
+                }
+            })
+
+            document.body.addEventListener('touchend',function(e){
+                if (currentElement !== undefined) {
+                    currentElement.classList.remove('thebigone')
+                }
+                currentElement = undefined
+            })
+
+            document.body.addEventListener('touchstart',function(e){
+                var myLocation = e.changedTouches[0]
+                var realTarget = document.elementFromPoint(myLocation.clientX, myLocation.clientY)
+                if (!realTarget.classList.contains("interactelement")) {
+                    return
+                }
+                if (currentElement !== undefined) {
+                    currentElement.classList.remove('thebigone')
+                }
+                currentElement = realTarget
+                currentElement.classList.add('thebigone')
+            })
+            
+        })()
+    </script>
+</body>
+</html>
