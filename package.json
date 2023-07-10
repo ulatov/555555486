@@ -2,7 +2,7 @@
   "name": "555555486.xyz",
   "type": "module",
   "version": "0.0.1",
-  "private":"true",
+  "private": "true",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -12,8 +12,9 @@
   },
   "dependencies": {
     "@astrojs/react": "^2.1.1",
-    "@astrojs/tailwind": "^3.1.1",
-    "astro": "^2.3.0"
+    "@astrojs/tailwind": "^3.1.3",
+    "astro": "^2.8.0",
+    "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
     "prettier": "^2.8.7",
