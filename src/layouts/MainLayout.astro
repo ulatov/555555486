@@ -1,6 +1,4 @@
 ---
-// test
-import '../styles/reset.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
@@ -17,7 +15,7 @@ import Footer from '../components/Footer.astro';
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 </head>
-<body>
+<body class="grid place-items-center h-screen content-center">
     <Header />
     <main>
         <slot />
@@ -25,17 +23,3 @@ import Footer from '../components/Footer.astro';
     <Footer />
 </body>
 </html>
-
-<style>
-    body {
-        display: grid;
-        grid-template-rows: auto 1fr auto;
-        min-height: 100vh;
-    }
-
-    main {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-</style>
